@@ -1,0 +1,50 @@
+# DotSight FAQ
+
+## What is DotSight, and what does it aim to achieve in Web3 analytics?
+
+DotSight is an advanced analytics data platform developed by FiDi. Its primary aim is to empower users in the Web3 ecosystem to easily construct high-precision data pipelines and seamlessly visualize on-chain data with minimal or no coding required. It contributes to Web3 analytics by providing a flexible and customizable framework for aggregating, processing, and visualizing data from various sources.
+
+## How do I get started with DotSight, and what are the system requirements?
+
+To get started with DotSight, you should follow these steps:
+- Ensure you have Node v16 or above and npm v7 or above on your machine.
+- Clone the DotSight repository from GitHub.
+- Navigate to the cloned repository and run `npm ci` to install the necessary dependencies.
+- Initiate the DotSight application by executing `npm start`.
+
+## Can I create custom data pipelines in DotSight, and how do I do that?
+
+Yes, you can create custom data pipelines in DotSight. You can update the `pipeline.config.ts` file to define your custom pipeline. Several predefined pipelines are available for reference, and you can mimic their definitions by extending or creating your own data sources, mixers, middlewares, and mappers.
+
+## What are entities in DotSight, and how can I extend them or create new ones?
+
+Entities in DotSight represent different types of data. You can find supported entities in the `./entities` directory. To extend or create new entities, you can effortlessly extend the Entity type, which comprises components like `id`, `meta`, `metrics`, and `HistoricalMetrics`.
+
+## How do I customize data sources in DotSight, and what options are available?
+
+Data sources in DotSight can be customized by choosing from available data sources or creating your own by extending the abstract data source classes. There are abstract classes tailored to each entity type. You can also leverage external data sources like GraphQL services. Configuration options for data sources are available in the pipeline configuration.
+
+## What are middlewares, and how can I use them to enhance data from different sources?
+
+Middlewares in DotSight are used to augment or modify data as it progresses through the data pipeline. They are particularly useful when data cannot be obtained from a single data source. Middlewares can augment or replace metrics and meta fields of an entity. For example, you can use middleware to enrich WalletToken data with token prices from an off-chain source.
+
+## Can I create my own mappers in DotSight, and what is their role in the data pipeline?
+
+Yes, you can create your own mappers in DotSight. Mappers act as transformative agents that convert arrays of entities acquired from data sources into a serialized data structure. This structure can be used in other services or displayed through DotSight's compatible UI widgets. Each mapper has a unique identifier and is specified when executing the pipeline.
+
+## Where can I find the API documentation for DotSight, and what functionalities are available?
+
+The API documentation for DotSight can be found in the OpenAPI Reference and the Swagger UI, typically accessible by visiting `/swagger`. It provides detailed information about available parameters and functionalities for interacting with DotSight's API.
+
+## What is the current focus and roadmap for DotSight's development?
+
+As of the provided information, the current focus and roadmap for DotSight's development include ongoing work on data sources, middlewares, and mappers. The future plans involve the development of UI widgets for existing pipelines, a customizable no-code UI, Dockerized deployment, developer bounties, SQL querying via the UI, and building an extensive library of data sources and UI widgets.
+
+## How can I contribute to the development of DotSight, and what are the guidelines for contributions?
+
+To contribute to DotSight's development, you can follow these guidelines:
+- Fork the DotSight repository and create a new branch for your contribution.
+- Make the necessary changes and submit a pull request.
+- Ensure that all continuous integration (CI) checks pass successfully.
+- Ensure your contribution has sufficient test coverage.
+- Submit your PR and engage in discussions with the project maintainers. More details on the development environment setup and contribution process can be found in the Contribution Guidelines.

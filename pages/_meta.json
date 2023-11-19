@@ -1,7 +1,13 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "Overview",
+  "portfolio-analytics": "Portfolio Analytics",
+  "dotsight": "DotSight",
+  "ios-app": "iOS App",
+  "developer-guides": "Developer Guides",
+  "user-guides": "User Guides",
+  "faqs": "FAQ",
+  "release-notes": "Release Notes",
+  "contributor-guides": "Contributor Guides",
   "about": {
     "title": "About",
     "type": "page"

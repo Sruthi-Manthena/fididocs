@@ -1,0 +1,86 @@
+# DotSight Starter Guide
+
+## Prerequisites
+
+Ensure that your development environment meets the following requirements:
+
+- Node.js: Version 16 or above.
+- npm (Node Package Manager): Version 7 or above.
+- Docker: Version 20 or above.
+
+## Cloning DotSight Repository
+
+1. Clone the DotSight repository from GitHub:
+
+   ```bash
+   git clone https://github.com/your-username/DotSight.git
+   ```
+
+## Installing Dependencies
+
+2. Navigate to the cloned repository in your terminal:
+
+   ```bash
+   cd DotSight
+   ```
+
+3. Install the necessary dependencies using npm:
+
+   ```bash
+   npm ci
+   ```
+
+## Specifying Application Secrets
+
+4. Create a `.env` file in the project root:
+
+   ```bash
+   touch .env
+   ```
+
+5. Add the following lines to the `.env` file, replacing the placeholders with your desired values:
+
+   ```env
+   DB_NAME=dotsight
+   DB_USERNAME=dotsight
+   DB_PASSWORD=d0tS1gHtRul3z
+   ```
+
+## Starting the Environment with Docker
+
+6. Start the environment by running Docker Compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+## Handling Port Allocation Error
+
+7. If you encounter a "Bind for 0.0.0.0:5433 failed: port is already allocated" error, ensure no other applications are using port 5433.
+
+## Resolving Other Errors
+
+8. If you encounter any other errors, perform cleanup by running:
+
+   ```bash
+   docker compose rm -f
+   ```
+
+   Start the process again.
+
+## Populating the Database
+
+9. Run all migrations to populate the database:
+
+   ```bash
+   npm run typeorm:run-migrations
+   ```
+
+## Initiating DotSight Application
+
+10. Finally, initiate the DotSight application:
+
+    ```bash
+    npm start
+    ```
+

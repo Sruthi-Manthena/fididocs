@@ -1,0 +1,48 @@
+# Concepts
+
+## **Entities**
+
+`id`: serves as a unique identifier that plays a crucial role in FiDi's data processing. It helps in effectively handling entities originating from diverse data sources.
+
+`meta`: a set of fields that provide additional information and characteristics of the entity. For instance, it may include the dApp's name for the Protocol entity.
+
+`metrics`: a key-value structure representing the metrics collected by data sources for a specific entity. These metrics are essential for understanding and analyzing the entity's data. Examples include `netWorth` for a Wallet entity.
+
+`HistoricalMetrics`: a component that is similar to `metrics` but captures multiple metric values over time. Each metric value is associated with a corresponding timestamp, making it useful for tracking historical data trends.
+
+These components are designed to provide a comprehensive and versatile framework for managing and analyzing data entities within FiDi.
+
+## **Data Sources**
+
+Data sources in DotSight are the fundamental components responsible for providing a complete set of specific entity data within a defined context. Every data source in DotSight inherits the capabilities of the `AbstractDataSource` class, making them versatile and adaptable to various data retrieval methods. 
+
+- **AbstractDataSource Class:** This class serves as the foundation for all data sources in DotSight. It defines the essential methods and properties that data sources must implement. By inheriting from this class, data sources gain the standard functionality required within the DotSight ecosystem.
+
+- **Entity-Specific Data Sources:** To accommodate the diversity of entities, DotSight offers abstract classes tailored to each entity type, such as `AbstractProtocolDataSource`. This approach ensures that data sources are optimized for fetching data related to specific entities.
+
+- **GraphQL Services:** DotSight supports data retrieval from GraphQL services, particularly useful when dealing with multiple entities. It is recommended to create distinct DotSight data sources, each dedicated to a specific entity, when working with GraphQL services. This separation enhances clarity and maintainability in the configuration.
+
+- **Example: Leveraging DappRadar's Endpoint:** For practical application, you can leverage external endpoints like DappRadar's to fetch protocol data at the dApp level. DotSight's data sources can seamlessly interact with such services to provide relevant data for your application.
+
+## **Middlewares**
+
+In some scenarios, not all the required data can be obtained from a single data source. Middlewares play a crucial role in augmenting the data sourced from different entities. These middlewares allow for the incorporation of additional off-chain sources to enhance the completeness and accuracy of the data.
+
+- **Entity Progression:** Within a data pipeline, each entity progresses through a series of middlewares, as specified in the pipeline configuration. This enables the gradual refinement and enrichment of the entity's data.
+
+- **Data Augmentation:** Middlewares have the power to augment or replace metrics and meta fields of the entity. They serve as a bridge between on-chain and off-chain data sources, ensuring that the data you retrieve is comprehensive and up-to-date.
+
+- **Example: Coingecko Middleware:** A practical example of middleware usage is the Coingecko middleware, which can enrich WalletToken entities with tokens' prices if this pricing information is not available in the primary data source. This demonstrates the flexibility of middlewares in enhancing the quality of data within your pipelines.
+
+## **Mappers**
+
+Mappers serve as transformative agents in the data pipeline, converting arrays of entities acquired from data sources into a serialized data structure, commonly referred to as a data shape. This structured data is not only useful for internal services but can also be seamlessly integrated into DotSight's UI widgets for display.
+
+- **AbstractMapper Class:** Each mapper in DotSight extends the capabilities of the `AbstractMapper` class. This class defines the standard methods and properties that mappers must implement. It is the blueprint for creating mappers that transform raw data into the desired format.
+
+- **Unique Identifier:** Every mapper in a data pipeline possesses a unique identifier. This identifier must be specified when executing the pipeline, allowing you to choose the specific transformation or mapping process you want to apply to the data.
+
+- **Example: Distribution Mapper:** An exemplary instance is the Distribution mapper, which effectively transforms data into a distribution format. This distribution format is structured and organized, making it suitable for further analysis or presentation through DotSight's UI widgets.
+
+
+By understanding the role of data sources, middlewares, and mappers in DotSight, you can effectively configure your data pipelines to retrieve, enhance, and format data to meet your application's specific requirements. This flexibility and modularity are key strengths of the DotSight framework for data aggregation and processing.
