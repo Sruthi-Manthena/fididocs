@@ -2,9 +2,9 @@
   "index": "Overview",
   "portfolio-analytics": "Portfolio Analytics",
   "dotsight": "DotSight",
-  "ios-app": "iOS App",
   "developer-guides": "Developer Guides",
   "user-guides": "User Guides",
+  "ios-app": "iOS App",
   "faqs": "FAQ",
   "release-notes": "Release Notes",
   "contributor-guides": "Contributor Guides",
@@ -13,9 +13,9 @@
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Know More ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://twitter.com/cryptofidi",
     "newWindow": true
   }
 }

@@ -1,6 +1,6 @@
 # Concepts
 
-## **Entities**
+## *Entities*
 
 `id`: serves as a unique identifier that plays a crucial role in FiDi's data processing. It helps in effectively handling entities originating from diverse data sources.
 
@@ -12,7 +12,7 @@
 
 These components are designed to provide a comprehensive and versatile framework for managing and analyzing data entities within FiDi.
 
-## **Data Sources**
+## *Data Sources*
 
 Data sources in DotSight are the fundamental components responsible for providing a complete set of specific entity data within a defined context. Every data source in DotSight inherits the capabilities of the `AbstractDataSource` class, making them versatile and adaptable to various data retrieval methods. 
 
@@ -24,7 +24,7 @@ Data sources in DotSight are the fundamental components responsible for providin
 
 - **Example: Leveraging DappRadar's Endpoint:** For practical application, you can leverage external endpoints like DappRadar's to fetch protocol data at the dApp level. DotSight's data sources can seamlessly interact with such services to provide relevant data for your application.
 
-## **Middlewares**
+## *Middlewares*
 
 In some scenarios, not all the required data can be obtained from a single data source. Middlewares play a crucial role in augmenting the data sourced from different entities. These middlewares allow for the incorporation of additional off-chain sources to enhance the completeness and accuracy of the data.
 
@@ -34,7 +34,7 @@ In some scenarios, not all the required data can be obtained from a single data 
 
 - **Example: Coingecko Middleware:** A practical example of middleware usage is the Coingecko middleware, which can enrich WalletToken entities with tokens' prices if this pricing information is not available in the primary data source. This demonstrates the flexibility of middlewares in enhancing the quality of data within your pipelines.
 
-## **Mappers**
+## *Mappers*
 
 Mappers serve as transformative agents in the data pipeline, converting arrays of entities acquired from data sources into a serialized data structure, commonly referred to as a data shape. This structured data is not only useful for internal services but can also be seamlessly integrated into DotSight's UI widgets for display.
 
