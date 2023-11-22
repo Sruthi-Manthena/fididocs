@@ -1,6 +1,7 @@
 # DotSight Starter Guide
 
-## *Pre-requisites*
+## BACK-END
+### Pre-requisites
 
 ### Node.js and npm Installation:
    - Ensure that you have Node.js version 16 or above installed. You can download it from [Node.js official website](https://nodejs.org/).
@@ -9,7 +10,7 @@
 ### Docker Installation:
    - Install Docker from the [official Docker website](https://www.docker.com/get-started). Make sure you have Docker version 20 or above.
 
-## *Cloning DotSight Repository*
+### Cloning DotSight Repository
 
 Open a terminal and run the following command:
 
@@ -19,7 +20,7 @@ git clone https://github.com/your-username/DotSight.git
 
 Replace "your-username" with your GitHub username.
 
-## *Installing Dependencies*
+### Installing Dependencies
 
 Navigate to the cloned repository in your terminal:
 
@@ -33,7 +34,7 @@ Install the necessary dependencies using npm:
 npm ci
 ```
 
-## *Specifying Application Secrets*
+### Specifying Application Secrets
 
 Create a `.env` file in the project root:
 
@@ -49,7 +50,7 @@ DB_USERNAME=dotsight
 DB_PASSWORD=d0tS1gHtRul3z
 ```
 
-## *Starting the Environment with Docker*
+### Starting the Environment with Docker
 
 Start the environment by running Docker Compose:
 
@@ -57,7 +58,7 @@ Start the environment by running Docker Compose:
 docker compose up -d
 ```
 
-## *Handling Port Allocation Error*
+### Handling Port Allocation Error
 
 If you encounter a "Bind for 0.0.0.0:5433 failed: port is already allocated" error, ensure no other applications are using port 5433.
 
@@ -69,7 +70,7 @@ docker compose rm -f
 
 Start the process again.
 
-## *Populating the Database*
+### Populating the Database
 
 Run all migrations to populate the database:
 
@@ -77,7 +78,7 @@ Run all migrations to populate the database:
 npm run typeorm:run-migrations
 ```
 
-## *Initiating DotSight Application*
+### Initiating DotSight Application
 
 Finally, initiate the DotSight application:
 
@@ -87,4 +88,58 @@ npm start
 
 This command will start the application, and you should see relevant logs indicating that the server is running.
 
-By following these steps, you should have successfully set up the DotSight application with all its dependencies and started the environment using Docker.
+By following these steps, you should have successfully set up the DotSight application with all its dependencies and started the environment using Docker on the Backend.
+
+## FRONT-END
+### Setting Up DotSight Application
+
+Open a new terminal window (separate from the one used for the previous steps) and navigate to the same DotSight repository.
+### Clone the DotSight Repository
+
+Open a new terminal window and clone the DotSight repository using the following command:
+
+```bash
+git clone https://github.com/fidi-tech/dotsight-ui.git
+```
+
+### Navigate to the Cloned Repository
+
+Change your working directory to the cloned DotSight repository:
+
+```bash
+cd <repository-directory>
+```
+
+Replace `<repository-directory>` with the name of the directory created during the cloning process.
+
+### Install Dependencies
+
+Ensure you have the necessary dependencies by running:
+
+```bash
+npm ci
+```
+
+This command installs the dependencies listed in the `package-lock.json` file.
+
+### Build the Application
+
+Build the DotSight application by executing the following command:
+
+```bash
+npm run build
+```
+
+This step compiles and prepares the application for execution.
+
+### Run the Front End
+
+Initiate the DotSight-UI application by running:
+
+```bash
+npm start
+```
+
+This command starts the DotSight-UI application and launches it in your default web browser.
+
+Congratulations! You have successfully set up and launched the DotSight application. Feel free to explore its features and functionalities in your browser.
